@@ -1,0 +1,99 @@
+---
+title: blob
+---
+
+最近刚好在找工作，发现非常不顺利。
+男朋友提了一嘴，你们搞开发的不一般都会有自己的博客啊，github 之类的吗？“没有”，我这么回答。但是内心开始种下了一颗种子。
+俗话说，“好记性不如烂笔头”。之前发生的种种事情其实已经记不太清了，但是我觉得这是不好的，不知道过去，怎么知道如何成为现在的我的呢？所以我开始了我的博客规划。
+
+## 技术选型
+
+关键词：SSR / API Routes / 前后端一体化 / SEO 优化 / 实战练手
+
+目标：全面掌握全栈开发、深入理解 Web 工作原理
+
+前端：Next.js + Tailwind + Markdown 编辑器
+
+后端：Node.js（Express）+ MongoDB/PostgreSQL
+
+## 开始搭建
+
+blob 搭建：https://juejin.cn/post/7497221854056595465
+
+1. 搭建 next 基础框架
+
+```bash
+npx create-next-app@latest yukilab --typescript
+npx next build
+npm run start
+```
+
+2. markdown 配置
+   https://nextjs.org/docs/app/guides/mdx
+
+   2.1 安装依赖——md 解析
+
+   npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+   运行时动态加载 md
+   访问路径：/doc/welcome
+
+   运行后发现 md 文档没有样式，继续探索如何渲染 md
+
+   - 使用@tailwindcss/typography 的样式
+
+     ```ts
+     import typography from "@tailwindcss/typography";
+     /** @type {import('tailwindcss').Config} \*/
+     const config = {
+       content: [
+         "./app/**/_.{js,ts,jsx,tsx,mdx}",
+         "./components/**/_.{js,ts,jsx,tsx,mdx}",
+         "./content/*_/_.{md,mdx}",
+       ],
+       theme: {
+         extend: {},
+       },
+       plugins: [typography],
+     };
+     export default config;
+     ```
+
+     ```css
+     @import "tailwindcss";
+     @import "@tailwindcss/typography";
+     ```
+
+   ````
+    - 在 MDX 文件中使用 GFM 语法（比如表格、任务列表、删除线等）；
+    - 代码高亮
+
+    ```ts
+    // 引入 hightlight 样式
+     import remarkGfm from "remark-gfm";
+     import rehypeHighlight from "rehype-highlight";
+     import "highlight.js/styles/github-dark.css";
+
+    const { content } = await compileMDX({
+      source,
+      options: {
+        parseFrontmatter: true,
+        mdxOptions: {
+          // 在 MDX 文件中使用 GFM 语法（比如表格、任务列表、删除线等）；
+          remarkPlugins: [remarkGfm],
+          rehypePlugins: [rehypeHighlight],
+        },
+      },
+      // 动态导入时，需要使用 getMDXComponents 获取组件
+      components: getMDXComponents({}),
+    });
+   ````
+
+- 自定义样式：mdx-components.tsx
+
+### 过程记录
+
+1. 由于我非常想要一个时间轴记录人生历程，所以尝试写一个时间轴组件，参考：[cooltimeline 时间轴](https://cooltimeline.com/demo/cool-timeline-pro/vertical-timeline-flat-design/page/2/?utm_source=chatgpt.com&utm_medium=codecanyon&utm_campaign=demo&utm_content=live-preview#038;utm_medium=codecanyon&utm_campaign=demo&utm_content=live-preview)
+
+```
+
+```
