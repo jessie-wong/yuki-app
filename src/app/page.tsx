@@ -1,4 +1,5 @@
 import Timeline from "@/components/timeline/timeline"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -10,9 +11,14 @@ export default function Home() {
         <p className="mt-6 text-xl leading-8 text-muted-foreground">
           A personal blog and timeline showcase built with Next.js and Tailwind CSS.
         </p>
-      </div>
-      <div className="pb-16">
-        <Timeline />
+        <div className="mt-10">
+          <Link 
+            href="/blog"
+            className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90"
+          >
+            查看博客
+          </Link>
+        </div>
       </div>
     </div>
   )

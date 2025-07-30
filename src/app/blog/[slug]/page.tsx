@@ -61,7 +61,14 @@ export default async function Page({
   }
    
   export function generateStaticParams() {
-    return [{ slug: 'welcome' }, { slug: 'blob' }]
-  }
-   
-  export const dynamicParams = false
+  const POSTS_DIR = path.join(process.cwd(), "src/markdown")
+  const files = fs.readdirSync(POSTS_DIR)
+  
+  return files
+    .filter(file => SUFFIX.some(suffix => file.endsWith(suffix)))
+    .map(file => ({
+      slug: file.replace(/\.(md|mdx)$/, '')
+    }))
+}
+
+export const dynamicParams = false
