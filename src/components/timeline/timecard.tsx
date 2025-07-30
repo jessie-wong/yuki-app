@@ -17,10 +17,10 @@ export default function TimelineCard({
     <div
       className={`mt-[52px] w-[calc(50%-2rem)] rounded-lg border bg-card p-6 shadow-md`}
     >
-      <h3 className="text-lg font-semibold text-teal-600 dark:text-teal-400">{title}</h3>
-      <p className="text-sm text-muted-foreground mb-2">{date}</p>
+      <h3 className="text-xl font-semibold text-teal-600 dark:text-teal-400">{title}</h3>
+      <p className="text-base text-muted-foreground mb-2">{date}</p>
       {/* 内容限制高度 + 溢出隐藏 */}
-      <div className="relative max-h-48 overflow-hidden text-foreground text-sm leading-relaxed">
+      <div className="relative max-h-48 overflow-hidden text-foreground text-base leading-relaxed">
         {summary}
 
         {/* 渐变遮罩 */}
@@ -31,7 +31,7 @@ export default function TimelineCard({
         <div className="mt-4 text-right">
           <Link
             href={link}
-            className="text-sm text-teal-600 dark:text-teal-400 hover:underline font-medium"
+            className="text-base text-teal-600 dark:text-teal-400 hover:underline font-medium"
           >
             查看更多 →
           </Link>

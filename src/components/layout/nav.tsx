@@ -24,7 +24,7 @@ export function MainNav() {
 
   return (
     <div className="flex gap-6 md:gap-10">
-      <nav className="flex items-center space-x-6 text-sm font-medium">
+      <nav className="flex items-center space-x-6 text-base font-medium">
         {navItems.map((item) => (
           <Link
             key={item.path}
