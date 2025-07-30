@@ -6,7 +6,7 @@ import TimelineCard from "./timecard";
 
 export default function Timeline() {
   return (
-    <div className="relative mx-auto max-w-3xl px-4 py-16">
+    <div className="relative mx-auto max-w-3xl">
       {/* 纵向中轴线 */}
       <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-gradient-to-b from-teal-500/40 via-teal-500/80 to-teal-500/40" />
       {/* 事件节点 */}
@@ -23,7 +23,7 @@ export default function Timeline() {
         >
           {/* 连线圆点 */}
           <span
-            className={`absolute top-[52px] left-1/2 -translate-x-1/2 rounded-full bg-teal-500 p-2 ring-4 ring-white dark:ring-gray-900`}
+            className={`absolute top-[52px] left-1/2 -translate-x-1/2 rounded-full bg-teal-500 p-2 ring-4 ring-background`}
           >
             {item.icon &&
               (() => {
@@ -36,7 +36,7 @@ export default function Timeline() {
           </span>
 
           <div
-            className={`absolute flex items-center justify-center h-[40px] w-[150px] bg-white border-2 border-teal-500 left-1/2 -translate-x-1/2`}
+            className={`absolute flex items-center justify-center h-[40px] w-[150px] bg-card border-2 border-teal-500 left-1/2 -translate-x-1/2 text-foreground`}
           >
             {item.date}
           </div>
@@ -45,6 +45,8 @@ export default function Timeline() {
           <TimelineCard {...item} />
         </motion.div>
       ))}
+      {/* 底部间距占位 */}
+      <div className="h-16" />
     </div>
   );
 }
