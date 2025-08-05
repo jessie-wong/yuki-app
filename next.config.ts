@@ -1,18 +1,25 @@
 import createMDX from '@next/mdx'
+import { NextConfig } from 'next'
  
+// 从环境变量获取 basePath，如果没有设置则为空字符串（相对路径）
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+const assetPrefix = basePath ? `${basePath}/` : ''
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Configure `pageExtensions` to include markdown and MDX files
+const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  // Optionally, add any other Next.js config below
   experimental: {
     mdxRs: true,
   },
+  basePath,
+  assetPrefix,
+  trailingSlash: true,
+  
+  images: {
+    unoptimized: true,
+  },
 }
  
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-})
+const withMDX = createMDX({})
  
-// Merge MDX config with Next.js config
 export default withMDX(nextConfig)

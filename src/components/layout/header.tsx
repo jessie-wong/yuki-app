@@ -9,7 +9,7 @@ export function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/yukilab-logo.svg" alt="Yuki Lab" width={76} height={24} className="text-foreground dark:invert" />
+            <Image src="yukilab-logo.svg" alt="Yuki Lab" width={76} height={24} className="text-foreground dark:invert" />
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-between space-x-2">

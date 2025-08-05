@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   title: "Yuki Lab",
   description: "A personal blog and timeline showcase",
   icons: {
-    icon: "/yukilab-logo.svg",
-    shortcut: "/yukilab-logo.svg",
-    apple: "/yukilab-logo.svg",
+    icon: "yukilab-logo.svg",
+    shortcut: "yukilab-logo.svg",
+    apple: "yukilab-logo.svg",
   },
 }
 
