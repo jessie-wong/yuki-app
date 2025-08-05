@@ -10,10 +10,10 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 168 75% 40%;
+    --primary: 160 84% 39%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 168 75% 95%;
-    --secondary-foreground: 168 75% 20%;
+    --secondary: 160 84% 95%;
+    --secondary-foreground: 160 84% 20%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 168 75% 40%;
+    --ring: 160 84% 39%;
     --radius: 0.5rem;
   }
 
@@ -33,10 +33,10 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 168 75% 40%;
+    --primary: 160 84% 45%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 168 75% 20%;
-    --secondary-foreground: 168 75% 95%;
+    --secondary: 160 84% 20%;
+    --secondary-foreground: 160 84% 95%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
     --accent: 240 3.7% 15.9%;
@@ -45,7 +45,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 168 75% 40%;
+    --ring: 160 84% 45%;
   }
 }
 
@@ -55,5 +55,33 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .fresh-gradient {
+    background: linear-gradient(135deg, hsl(160, 84%, 39%) 0%, hsl(200, 84%, 45%) 50%, hsl(220, 84%, 50%) 100%);
+  }
+  
+  .line-border {
+    border: 1px solid hsl(160, 84%, 85%);
+    background: hsl(160, 84%, 98%);
+  }
+  
+  .line-border-dark {
+    border: 1px solid hsl(160, 84%, 25%);
+    background: hsl(160, 84%, 15%);
+  }
+  
+  .minimal-card {
+    border: 1px solid hsl(160, 84%, 85%);
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .minimal-card-dark {
+    border: 1px solid hsl(160, 84%, 25%);
+    background: hsl(240, 10%, 3.9%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 }

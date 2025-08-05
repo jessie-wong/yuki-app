@@ -48,6 +48,6 @@ export const timeline: TimelineEvent[] = [
     summary: "发布第一篇文章，分享「Hello yukilab!」。",
     icon: "Rocket",
     side: "left",
-    link: "/doc/blob",
+    link: "/doc/blog",
   },
 ];

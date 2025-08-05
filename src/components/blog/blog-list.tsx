@@ -7,7 +7,7 @@ export default async function BlogList() {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-3xl font-bold tracking-tight">Latest Posts</h2>
+      <h2 className="text-3xl font-bold tracking-tight">最新文章</h2>
       <div className="grid gap-4">
         {posts.map((post: BlogPost) => (
           <article key={post.slug} className="group relative rounded-lg border p-6 hover:bg-muted">

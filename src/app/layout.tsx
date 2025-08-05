@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { RootLayout } from "@/components/layout/root-layout"
+import { getAssetPath } from "@/lib/utils"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Yuki Lab",
-  description: "A personal blog and timeline showcase",
+  description: "一个基于 Next.js 和 Tailwind CSS 构建的个人博客平台",
   icons: {
-    icon: "yukilab-logo.svg",
-    shortcut: "yukilab-logo.svg",
-    apple: "yukilab-logo.svg",
+    icon: getAssetPath("yukilab-logo.svg"),
+    shortcut: getAssetPath("yukilab-logo.svg"),
+    apple: getAssetPath("yukilab-logo.svg"),
   },
 }
 

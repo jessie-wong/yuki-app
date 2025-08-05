@@ -8,6 +8,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
+import matter from "gray-matter";
 
 const SUFFIX = [".md", ".mdx"];
 
