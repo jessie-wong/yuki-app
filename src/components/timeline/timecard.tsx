@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export default function TimelineCard({
   title,
@@ -14,7 +15,11 @@ export default function TimelineCard({
   link?: string
 }) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`mt-[52px] w-full rounded-lg border bg-card p-6 shadow-md`}
     >
       <h3 className="text-xl font-semibold text-teal-600 dark:text-teal-400">{title}</h3>
@@ -37,6 +42,6 @@ export default function TimelineCard({
           </Link>
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }
