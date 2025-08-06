@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Card } from "@/components/ui/card"
 
 export default function Home() {
   return (
@@ -24,21 +25,21 @@ export default function Home() {
 
           {/* 个人技能展示 */}
           <div className="mb-20">
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-8 text-center">技能栈</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-8 text-center">
+              技术栈
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {[
-                { name: "前端开发", level: "熟练", color: "from-blue-400 to-blue-600" },
-                { name: "后端开发", level: "掌握", color: "from-green-400 to-green-600" },
-                { name: "数据库", level: "了解", color: "from-purple-400 to-purple-600" },
-                { name: "DevOps", level: "学习", color: "from-orange-400 to-orange-600" }
+                { name: "React", icon: "⚛️", level: "精通" },
+                { name: "TypeScript", icon: "📘", level: "熟练" },
+                { name: "Next.js", icon: "⚡", level: "精通" },
+                { name: "Node.js", icon: "🟢", level: "熟练" }
               ].map((skill, index) => (
-                <div key={index} className="minimal-card dark:minimal-card-dark rounded-lg p-4 text-center">
-                  <div className={`w-12 h-12 mx-auto bg-gradient-to-r ${skill.color} rounded-full flex items-center justify-center mb-3`}>
-                    <span className="text-white text-sm font-medium">{skill.name.charAt(0)}</span>
-                  </div>
-                  <h3 className="text-sm font-medium text-gray-800 dark:text-gray-100">{skill.name}</h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">{skill.level}</p>
-                </div>
+                <Card key={index} padding="p-4" className="text-center hover:shadow-lg transition-all duration-300">
+                  <div className="text-2xl mb-2">{skill.icon}</div>
+                  <h3 className="font-medium text-gray-800 dark:text-gray-100 mb-1">{skill.name}</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{skill.level}</p>
+                </Card>
               ))}
             </div>
           </div>
@@ -46,7 +47,7 @@ export default function Home() {
           {/* 功能区域 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {/* 技术博客 */}
-            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+            <Card hoverable>
               <div className="text-center space-y-4">
                 <div className="w-14 h-14 mx-auto fresh-gradient rounded-full flex items-center justify-center">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,10 +65,10 @@ export default function Home() {
                   阅读文章
                 </Link>
               </div>
-            </div>
+            </Card>
 
             {/* 生活分享 */}
-            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+            <Card hoverable>
               <div className="text-center space-y-4">
                 <div className="w-14 h-14 mx-auto fresh-gradient rounded-full flex items-center justify-center">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,10 +86,10 @@ export default function Home() {
                   查看分享
                 </Link>
               </div>
-            </div>
+            </Card>
 
             {/* 时间线 */}
-            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+            <Card hoverable>
               <div className="text-center space-y-4">
                 <div className="w-14 h-14 mx-auto fresh-gradient rounded-full flex items-center justify-center">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,13 +107,13 @@ export default function Home() {
                   查看轨迹
                 </Link>
               </div>
-            </div>
+            </Card>
           </div>
 
           {/* 最新动态 */}
           <div className="mb-20">
             <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6 text-center">最新动态</h2>
-            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6">
+            <Card>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -127,7 +128,7 @@ export default function Home() {
                   <span className="text-sm text-gray-600 dark:text-gray-300">准备写一篇关于工作与生活平衡的思考</span>
                 </div>
               </div>
-            </div>
+            </Card>
           </div>
 
           {/* 装饰性线条元素 */}
