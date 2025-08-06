@@ -3,21 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-
-const navItems = [
-  {
-    path: "/",
-    label: "首页",
-  },
-  {
-    path: "/blog/",
-    label: "博客",
-  },
-  {
-    path: "/about/",
-    label: "关于",
-  },
-]
+import { navItems } from "./nav-items"
 
 export function MainNav() {
   const pathname = usePathname()

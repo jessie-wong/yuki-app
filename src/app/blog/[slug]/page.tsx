@@ -8,8 +8,6 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
-import matter from "gray-matter";
-
 const SUFFIX = [".md", ".mdx"];
 
 export default async function Page({
@@ -55,7 +53,7 @@ export default async function Page({
   });
    
     return (
-      <article className="prose mx-auto py-8 px-4 max-w-3xl">
+      <article className="prose dark:prose-invert mx-auto py-8 px-4 max-w-3xl">
         {res.content}
       </article>
     );

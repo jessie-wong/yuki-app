@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          {/* 主标题区域 */}
+          {/* 个人介绍区域 */}
           <div className="text-center mb-20">
             <div className="relative inline-block mb-8">
               <h1 className="text-5xl md:text-7xl font-light text-gray-800 dark:text-gray-100 mb-4">
@@ -14,52 +14,118 @@ export default function Home() {
               <div className="absolute -bottom-2 left-0 right-0 h-0.5 fresh-gradient"></div>
             </div>
             
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              一个基于 Next.js 和 Tailwind CSS 构建的个人博客平台。
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed mb-6">
+              欢迎来到我的个人空间 👋
+            </p>
+            <p className="text-base text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              这里是我分享技术学习、生活感悟、项目经验的地方。希望能通过文字记录成长，也希望能与志同道合的朋友交流。
             </p>
           </div>
 
+          {/* 个人技能展示 */}
+          <div className="mb-20">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-8 text-center">技能栈</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { name: "前端开发", level: "熟练", color: "from-blue-400 to-blue-600" },
+                { name: "后端开发", level: "掌握", color: "from-green-400 to-green-600" },
+                { name: "数据库", level: "了解", color: "from-purple-400 to-purple-600" },
+                { name: "DevOps", level: "学习", color: "from-orange-400 to-orange-600" }
+              ].map((skill, index) => (
+                <div key={index} className="minimal-card dark:minimal-card-dark rounded-lg p-4 text-center">
+                  <div className={`w-12 h-12 mx-auto bg-gradient-to-r ${skill.color} rounded-full flex items-center justify-center mb-3`}>
+                    <span className="text-white text-sm font-medium">{skill.name.charAt(0)}</span>
+                  </div>
+                  <h3 className="text-sm font-medium text-gray-800 dark:text-gray-100">{skill.name}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{skill.level}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* 功能区域 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-            {/* 博客卡片 */}
-            <div className="minimal-card dark:minimal-card-dark rounded-lg p-8 hover:shadow-lg transition-all duration-300">
-              <div className="text-center space-y-6">
-                <div className="w-16 h-16 mx-auto fresh-gradient rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {/* 技术博客 */}
+            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+              <div className="text-center space-y-4">
+                <div className="w-14 h-14 mx-auto fresh-gradient rounded-full flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium text-gray-800 dark:text-gray-100 mb-2">博客</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">探索最新的文章和见解</p>
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-gray-100 mb-2">技术博客</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">分享技术学习心得和项目经验</p>
                 </div>
                 <Link 
                   href="/blog"
-                  className="inline-block px-6 py-2 fresh-gradient text-white font-medium rounded-full hover:opacity-90 transition-opacity duration-200"
+                  className="inline-block px-4 py-2 fresh-gradient text-white text-sm font-medium rounded-full hover:opacity-90 transition-opacity duration-200"
                 >
-                  查看博客
+                  阅读文章
                 </Link>
               </div>
             </div>
 
-            {/* 关于卡片 */}
-            <div className="minimal-card dark:minimal-card-dark rounded-lg p-8 hover:shadow-lg transition-all duration-300">
-              <div className="text-center space-y-6">
-                <div className="w-16 h-16 mx-auto fresh-gradient rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            {/* 生活分享 */}
+            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+              <div className="text-center space-y-4">
+                <div className="w-14 h-14 mx-auto fresh-gradient rounded-full flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium text-gray-800 dark:text-gray-100 mb-2">关于</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">了解更多关于我们的信息</p>
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-gray-100 mb-2">生活感悟</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">记录生活中的小确幸和思考</p>
                 </div>
                 <Link 
-                  href="/about"
-                  className="inline-block px-6 py-2 fresh-gradient text-white font-medium rounded-full hover:opacity-90 transition-opacity duration-200"
+                  href="/life"
+                  className="inline-block px-4 py-2 fresh-gradient text-white text-sm font-medium rounded-full hover:opacity-90 transition-opacity duration-200"
                 >
-                  了解更多
+                  查看分享
                 </Link>
+              </div>
+            </div>
+
+            {/* 时间线 */}
+            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6 hover:shadow-lg transition-all duration-300">
+              <div className="text-center space-y-4">
+                <div className="w-14 h-14 mx-auto fresh-gradient rounded-full flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-gray-800 dark:text-gray-100 mb-2">成长轨迹</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">记录学习和生活的里程碑</p>
+                </div>
+                <Link 
+                  href="/timeline"
+                  className="inline-block px-4 py-2 fresh-gradient text-white text-sm font-medium rounded-full hover:opacity-90 transition-opacity duration-200"
+                >
+                  查看轨迹
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* 最新动态 */}
+          <div className="mb-20">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-6 text-center">最新动态</h2>
+            <div className="minimal-card dark:minimal-card-dark rounded-lg p-6">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">正在学习 Next.js 15 的新特性</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">计划分享一些前端性能优化的经验</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">准备写一篇关于工作与生活平衡的思考</span>
+                </div>
               </div>
             </div>
           </div>

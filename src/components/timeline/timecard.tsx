@@ -15,7 +15,7 @@ export default function TimelineCard({
 }) {
   return (
     <div
-      className={`mt-[52px] w-[calc(50%-2rem)] rounded-lg border bg-card p-6 shadow-md`}
+      className={`mt-[52px] w-full rounded-lg border bg-card p-6 shadow-md`}
     >
       <h3 className="text-xl font-semibold text-teal-600 dark:text-teal-400">{title}</h3>
       <p className="text-base text-muted-foreground mb-2">{date}</p>
