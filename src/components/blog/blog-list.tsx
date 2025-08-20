@@ -1,13 +1,20 @@
 import Link from 'next/link'
 import type { BlogPost } from '@/types'
-import { getBlogPosts } from '@/app/api/posts'
 
-export default async function BlogList() {
-  const posts = await getBlogPosts()
+interface BlogListProps {
+  allPosts: BlogPost[]
+  selectedCategory?: string
+  selectedTag?: string
+}
+
+export default function BlogList({ allPosts, selectedCategory, selectedTag }: BlogListProps) {
+  const posts = allPosts.filter(post => {
+    return (!selectedCategory || post.category === selectedCategory) &&
+           (!selectedTag || (post.tags || []).includes(selectedTag))
+  })
 
   return (
     <div className="space-y-8">
-      <h2 className="text-3xl font-bold tracking-tight">最新文章</h2>
       <div className="grid gap-4">
         {posts.map((post: BlogPost) => (
           <article key={post.slug} className="group relative rounded-lg border p-6 hover:bg-muted">

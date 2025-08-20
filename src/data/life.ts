@@ -4,33 +4,33 @@ export const lifeData: PageData = {
   title: "生活感悟",
   subtitle: "记录生活中的小确幸、思考和感悟",
   sections: [
-    {
-      title: "生活随笔",
-      layout: "single",
-      cards: [
-        {
-          type: 'essay',
-          title: "关于工作与生活的平衡",
-          content: "最近在思考如何在忙碌的工作中保持内心的平静...",
-          date: "2024-01-15",
-          color: "border-green-400"
-        },
-        {
-          type: 'essay',
-          title: "学习新技术的乐趣",
-          content: "每次学习新技术都像重新认识这个世界...",
-          date: "2024-01-10",
-          color: "border-blue-400"
-        },
-        {
-          type: 'essay',
-          title: "阅读的力量",
-          content: "最近重读了《深入理解计算机系统》，有了新的感悟...",
-          date: "2024-01-05",
-          color: "border-purple-400"
-        }
-      ]
-    },
+    // {
+    //   title: "生活随笔",
+    //   layout: "single",
+    //   cards: [
+    //     {
+    //       type: 'essay',
+    //       title: "关于工作与生活的平衡",
+    //       content: "最近在思考如何在忙碌的工作中保持内心的平静...",
+    //       date: "2024-01-15",
+    //       color: "border-green-400"
+    //     },
+    //     {
+    //       type: 'essay',
+    //       title: "学习新技术的乐趣",
+    //       content: "每次学习新技术都像重新认识这个世界...",
+    //       date: "2024-01-10",
+    //       color: "border-blue-400"
+    //     },
+    //     {
+    //       type: 'essay',
+    //       title: "阅读的力量",
+    //       content: "最近重读了《深入理解计算机系统》，有了新的感悟...",
+    //       date: "2024-01-05",
+    //       color: "border-purple-400"
+    //     }
+    //   ]
+    // },
     {
       title: "日常记录",
       layout: "single",

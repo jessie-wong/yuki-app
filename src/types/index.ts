@@ -5,4 +5,5 @@ export interface BlogPost {
   description?: string
   author?: string
   tags?: string[]
+  category?: string
 }

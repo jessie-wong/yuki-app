@@ -41,7 +41,8 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
       date,
       description,
       author: frontmatter.author,
-      tags: frontmatter.tags
+      tags: frontmatter.tags,
+      category: frontmatter.category || "技术"
     }
   }).sort((a, b) => b.date.localeCompare(a.date))
 }
